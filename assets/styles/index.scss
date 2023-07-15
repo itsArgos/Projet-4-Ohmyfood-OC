@@ -1,0 +1,7 @@
+// Index.scss rassemble tous les fichiers sass 
+
+// settings.scss doit être lu en premier pour que sass connaisse les variables
+@import "./settings";
+@import "./layout/header";
+@import "./layout/footer";
+@import "./components/buttons";
