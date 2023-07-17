@@ -1,16 +1,48 @@
-// ******** Polices *********
+// ******** Général *********
 * {
-    font-family: 'Shrikhand', cursive;
-    font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
 }
 
-
-// ****** variables ******
-:root {
-    $btn-color1: #9356DC;
-    $btn-color2: #FF79DA;
-    $tertiary-color: #99e2D0;
+body {
+    margin: 0;
+    padding: 0;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    padding: 0;
+
+    li {
+        list-style: none;
+    }
+}
+
+// ****** variables ******
+    $main-bg-color: #F6F6F6;
+
+    $btn-color1: #FF79DA;
+    $btn-color2: #9356DC;
+
+    $tertiary-color: #99e2D0;
+    $tertiary-color2: #008766;
+
+    
+    $grey: #353535f8;
+    $location-bg-color: #e1e1e1c0;
+    $paragraph-color: #353535d8;
+
+
 // ****** mixins ***** 
+@mixin btn-shadow {
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.45);
+}
+
+@mixin bloc-shadow {
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+}
+
+

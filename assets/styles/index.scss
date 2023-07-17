@@ -1,7 +1,247 @@
-// Index.scss rassemble tous les fichiers sass 
+// index.scss rassemble tous les fichiers sass 
 
 // settings.scss doit être lu en premier pour que sass connaisse les variables
 @import "./settings";
 @import "./layout/header";
 @import "./layout/footer";
 @import "./components/buttons";
+
+// ***************** Feuille de style **************
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+// ********** Partie localisation **********
+.location {
+    background: $location-bg-color;
+    position: relative;
+
+    .search-part {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 17px 0;
+    }
+
+    .search-part::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        top: -2px;
+        left: 0px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    }
+
+    input {
+        width: 135px;
+        text-align: center;
+        border: none;
+        outline: none;
+        background: transparent;
+        margin-top: 2px;
+
+        &::placeholder{
+            color: $grey;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+    }
+
+    i {
+        color: $grey;
+    }
+}
+
+
+// ******** Partie Exploration ********* 
+.search-restaurants {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background: $main-bg-color;
+    
+    h1 {
+        margin-top: 40px;
+        margin-bottom: 0;
+        max-width: 250px;
+    }
+    
+    p {
+        color: $paragraph-color;
+        max-width: 350px;
+        font-size: 1.1rem;
+        font-weight: 300;
+    }
+    
+    a {
+        border: unset;
+        border-radius: 25px;
+        padding: 15px 25px;
+        font-size: 1rem;
+        font-weight: 500;
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        background: linear-gradient($btn-color1, $btn-color2);
+        cursor: pointer;
+        @include btn-shadow;
+        
+        &:hover {
+            transition: 0.4s ease;
+            filter: brightness(1.1);
+        }
+    }
+}
+
+
+// ********** Partie Fonctionnement *********
+    .adjust-main {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .functioning {
+        display: flex;
+    flex-direction: column;
+    margin: 30px 0 50px 0;
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+}
+
+    .functioning-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-left: 20px;
+        width: 93%;
+        position: relative;
+    }
+
+    .functioning-content {
+        display: flex;
+        align-items: center;
+        height: 70px;
+        width: 100%;
+        margin: 10px 0 15px auto;
+        border-radius: 20px;
+        background: $main-bg-color;
+        @include bloc-shadow;
+
+
+    &:nth-child(1):before {
+            content: "1";
+            position: absolute;
+            font-size: 0.8rem;
+            left: -12px;
+            top: 35px;
+            align-items: center;
+            padding: 4px 8px;
+            border-radius: 25px;
+            background: $btn-color2;
+            color: white;
+    }
+
+    &:nth-child(2):before {
+            content: "2";
+            position: absolute;
+            font-size: 0.8rem;
+            left: -12px;
+            top: 130px;
+            padding: 4px 8px;
+            border-radius: 25px;
+            background: $btn-color2;
+            color: white;
+    }
+
+    &:nth-child(3):before {
+            content: "3";
+            position: absolute;
+            font-size: 0.8rem;
+            left: -12px;
+            top: 225px;
+            padding: 4px 8px;
+            border-radius: 25px;
+            background: $btn-color2;
+            color: white;
+    }
+
+
+    p {
+            margin: 0;
+            padding-left: 35px;
+            font-weight: 600;
+        }
+
+    i {
+            padding-right: 20px;
+     }
+}
+
+    
+
+// ******** Partie Réstaurant *********
+.restaurants {
+    display: flex;
+    flex-direction: column;
+    background: $main-bg-color;
+    padding-bottom: 40px;
+
+    h2 {
+        padding-top: 30px;
+    }
+
+    &__card {
+        position: relative;
+        border: 1px solid none;
+        border-radius: 15px;
+        background: white;
+        margin-bottom: 20px;
+    }
+
+    img{
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+        object-position: 50% 62%;
+        border-radius: 15px 15px 0 0;
+    }
+
+
+
+    .card-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        div{
+            padding-left: 15px;
+            padding-right: 25px;
+        }
+
+        h3, p{
+            margin: 0;
+            line-height: 22px;
+        }
+    }
+}
+
+.restaurant-after::after {
+    content: "Nouveau";
+    position: absolute;
+    font-size: 0.9rem;
+    left: 233px;
+    top: 15px;
+    padding: 6px 12px;
+    border-radius: 2px;
+    color: $tertiary-color2;
+    background: $tertiary-color;
+}
