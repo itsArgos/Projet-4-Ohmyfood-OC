@@ -23,10 +23,6 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -34,15 +30,20 @@ header {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 25px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   position: relative;
 }
 header img {
   width: 160px;
 }
+header div {
+  position: absolute;
+  left: 25px;
+  font-size: 1.2rem;
+}
 
 footer {
-  background: rgba(53, 53, 53, 0.9725490196);
+  background: #353535;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,7 +57,7 @@ footer {
   color: white;
 }
 footer .footer-content {
-  padding-left: 20px;
+  padding-left: 25px;
   padding-bottom: 10px;
 }
 footer .footer-content h3 {

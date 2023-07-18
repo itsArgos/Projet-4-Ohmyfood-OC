@@ -6,11 +6,13 @@
 @import "../layout/footer";
 
 // ***************** Feuille de style **************
+
 body {
     font-family: 'Roboto', sans-serif;
 }
 
 // ********** Partie localisation **********
+
 .location {
     background: $location-bg-color;
     position: relative;
@@ -54,6 +56,7 @@ body {
 
 
 // ******** Partie Exploration ********* 
+
 .search-restaurants {
     display: flex;
     flex-direction: column;
@@ -95,6 +98,7 @@ body {
 
 
 // ********** Partie Fonctionnement *********
+
     .adjust-main {
         width: 90%;
         margin: 0 auto;
@@ -185,6 +189,7 @@ body {
     
 
 // ******** Partie Réstaurant *********
+
 .restaurants {
     display: flex;
     flex-direction: column;

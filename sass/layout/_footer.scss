@@ -1,27 +1,27 @@
 footer {
-    background: $grey;
+    background: $footer-bg-color;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     color: white;
-    
+
     .footer-content {
-        padding-left: 20px;
+        padding-left: 25px;
         padding-bottom: 10px;
-        
+
         h3 {
             font-family: 'Shrikhand';
             font-weight: 500;
         }
-        
+
         i {
             margin-right: 10px;
         }
-        
-        a{
+
+        a {
             color: white;
         }
-        
+
         li {
             margin-bottom: 10px;
         }

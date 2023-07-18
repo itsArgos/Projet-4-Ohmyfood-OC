@@ -1,13 +1,18 @@
 header {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 25px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     position: relative;
 
     img {
         width: 160px;
+    }
+
+    div {
+        position: absolute;
+        left: 25px;
+        font-size: 1.2rem;
     }
 }

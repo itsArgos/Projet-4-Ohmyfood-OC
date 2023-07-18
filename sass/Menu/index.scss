@@ -4,3 +4,137 @@
 @import "../layout/settings";
 @import "../layout/header";
 @import "../layout/footer";
+
+// ***************** Feuille de style **************
+
+body {
+    font-family: 'Roboto', sans-serif;
+    // font-family: 'Shrikhand';
+}
+
+.position {
+    position: absolute;
+    width: 100%;
+    top: 250px;
+}
+
+// ********** En-tête **********
+.img-background img{
+    object-fit: cover;
+    object-position: center;
+    object-position: 50% 55%;
+    width: 100%;
+    height: 240px;
+}
+
+// ********* Menu ********** 
+
+.menu {
+    background: $main-bg-color;
+    width: 100%;
+    border-radius: 40px;
+    
+    &__content {
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+
+    &__header {
+        
+        
+        div{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 15px;
+        }
+            h2{
+                font-family: 'Shrikhand';
+                font-weight: 500;
+                font-size: 1.7rem;
+                margin-bottom: 0.5rem;
+            }
+
+            i {
+                margin-top: 10px;
+                margin-right: 35px;
+                font-size: 1.5rem;
+            }
+    }
+
+    .card {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid transparent;
+        border-radius: 15px;
+        margin: 10px;
+        background: white;
+        @include bloc-shadow;
+
+        .price {
+            margin-top: 43px;
+            margin-right: 12px;
+            font-weight: 600;
+            color: $paragraph-color;
+        }
+    }
+    .card-content {
+        margin-left: 13px;
+    
+        p {
+        font-size: 0.9rem;
+        margin-top: 0;
+
+    }
+        h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.3em;
+    }
+}
+
+        .flex-card {
+            margin-bottom: 40px;
+        }
+
+}
+
+.line-bottom{
+    position: relative;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    
+    &::after {
+        content: "";
+        border-bottom: 3px solid;
+        position: absolute;
+        color: $tertiary-color;
+        width: 40px;
+        height: 3px;
+        left: 1px;
+        top: 20px;
+    }
+}
+
+.btn-order {
+    text-align: center;
+    border: unset;
+    max-width: 40%;
+    border-radius: 25px;
+    padding: 15px 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: auto;
+    margin-bottom: 40px;
+    background: linear-gradient($btn-color1, $btn-color2);
+    cursor: pointer;
+    @include btn-shadow;
+    
+    &:hover {
+        transition: 0.4s ease;
+        filter: brightness(1.1);
+    }
+
+    a {
+        color: white;
+    }
+}
