@@ -1,0 +1,74 @@
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  padding: 0;
+}
+ul li {
+  list-style: none;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  position: relative;
+}
+header img {
+  width: 160px;
+}
+
+footer {
+  background: rgba(53, 53, 53, 0.9725490196);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  color: white;
+}
+footer .footer-content {
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+footer .footer-content h3 {
+  font-family: "Shrikhand";
+  font-weight: 500;
+}
+footer .footer-content i {
+  margin-right: 10px;
+}
+footer .footer-content a {
+  color: white;
+}
+footer .footer-content li {
+  margin-bottom: 10px;
+}/*# sourceMappingURL=index.css.map */
