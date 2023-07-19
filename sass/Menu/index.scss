@@ -1,9 +1,9 @@
 // index.scss rassemble tous les fichiers sass 
 
 // settings.scss doit être lu en premier pour que sass connaisse les variables
-@import "../layout/settings";
-@import "../layout/header";
-@import "../layout/footer";
+@import "../Layout/settings";
+@import "../Layout/header";
+@import "../Layout/footer";
 
 // ***************** Feuille de style **************
 
@@ -118,7 +118,7 @@ body {
 .btn-order {
     text-align: center;
     border: unset;
-    max-width: 40%;
+    width: 130px;
     border-radius: 25px;
     padding: 15px 25px;
     font-size: 1rem;
@@ -127,11 +127,12 @@ body {
     margin-bottom: 40px;
     background: linear-gradient($btn-color1, $btn-color2);
     cursor: pointer;
+    transition: 0.4s ease;
     @include btn-shadow;
     
     &:hover {
-        transition: 0.4s ease;
         filter: brightness(1.1);
+        @include btn-shadow-hover
     }
 
     a {

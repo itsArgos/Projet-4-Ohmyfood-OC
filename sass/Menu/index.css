@@ -181,7 +181,7 @@ body {
 .btn-order {
   text-align: center;
   border: unset;
-  max-width: 40%;
+  width: 130px;
   border-radius: 25px;
   padding: 15px 25px;
   font-size: 1rem;
@@ -191,14 +191,16 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
   background: linear-gradient(#FF79DA, #9356DC);
   cursor: pointer;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
   -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.45);
           box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.45);
 }
 .btn-order:hover {
-  -webkit-transition: 0.4s ease;
-  transition: 0.4s ease;
   -webkit-filter: brightness(1.1);
           filter: brightness(1.1);
+  -webkit-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.45);
+          box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.45);
 }
 .btn-order a {
   color: white;

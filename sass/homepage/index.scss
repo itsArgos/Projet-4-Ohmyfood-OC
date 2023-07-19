@@ -1,9 +1,9 @@
 // index.scss rassemble tous les fichiers sass 
 
 // settings.scss doit être lu en premier pour que sass connaisse les variables
-@import "../layout/settings";
-@import "../layout/header";
-@import "../layout/footer";
+@import "../Layout/settings";
+@import "../Layout/header";
+@import "../Layout/footer";
 
 // ***************** Feuille de style **************
 
@@ -87,11 +87,12 @@ body {
         margin-bottom: 50px;
         background: linear-gradient($btn-color1, $btn-color2);
         cursor: pointer;
+        transition: 0.4s ease; 
         @include btn-shadow;
         
         &:hover {
-            transition: 0.4s ease;
-            filter: brightness(1.1);
+            filter: brightness(1.15);
+            @include btn-shadow-hover
         }
     }
 }
@@ -229,26 +230,29 @@ body {
         border-radius: 15px 15px 0 0;
     }
 
-    .card-content {
+    &__content {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-top: 15px;
-        padding-bottom: 15px;
-
-        div{
-            padding-left: 15px;
-            
-        }
+        padding: 15px 25px 15px 10px;
 
         h3, p{
             margin: 0;
             line-height: 22px;
         }
+    }
 
-        i {
-            font-size: 1.5rem;
-            padding-right: 25px;
+    .logo-heart {
+
+            
+        i{
+            font-size: 1.5em;
+            transition: 0.7s ease-in-out;
+        }
+            
+        i:hover{
+            font-weight: 600;
+            color: $btn-color1;
         }
     }
 }

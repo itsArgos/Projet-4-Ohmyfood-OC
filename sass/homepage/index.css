@@ -177,14 +177,16 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
   background: linear-gradient(#FF79DA, #9356DC);
   cursor: pointer;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
   -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.45);
           box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.45);
 }
 .search-restaurants a:hover {
-  -webkit-transition: 0.4s ease;
-  transition: 0.4s ease;
-  -webkit-filter: brightness(1.1);
-          filter: brightness(1.1);
+  -webkit-filter: brightness(1.15);
+          filter: brightness(1.15);
+  -webkit-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.45);
+          box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.45);
 }
 
 .adjust-main {
@@ -329,7 +331,7 @@ body {
      object-position: 50% 62%;
   border-radius: 15px 15px 0 0;
 }
-.restaurants .card-content {
+.restaurants__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -339,17 +341,18 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px 25px 15px 10px;
 }
-.restaurants .card-content div {
-  padding-left: 15px;
-}
-.restaurants .card-content h3, .restaurants .card-content p {
+.restaurants__content h3, .restaurants__content p {
   margin: 0;
   line-height: 22px;
 }
-.restaurants .card-content i {
-  font-size: 1.5rem;
-  padding-right: 25px;
+.restaurants .logo-heart i {
+  font-size: 1.5em;
+  -webkit-transition: 0.7s ease-in-out;
+  transition: 0.7s ease-in-out;
+}
+.restaurants .logo-heart i:hover {
+  font-weight: 600;
+  color: #FF79DA;
 }/*# sourceMappingURL=index.css.map */
