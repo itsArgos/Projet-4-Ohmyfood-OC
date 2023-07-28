@@ -11,6 +11,83 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(4px);
+    animation: loading 1.5s;
+    animation-fill-mode: forwards;
+
+    @keyframes loading {
+        from {
+            visibility: visible;
+        }
+        
+        to {
+            visibility: hidden;
+        }
+    }
+    
+    .ring {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        animation: ring 1.2s linear infinite;
+
+        @keyframes ring {
+            0%{
+                transform: rotate(0deg);
+                box-shadow: 1px 5px 2px #9356DC;
+            }
+
+            50%{
+                transform: rotate(180deg);
+                box-shadow: 1px 5px 2px #FF79DA;
+            }
+
+            100%{
+                transform: rotate(360deg);
+                box-shadow: 1px 5px 2px #ce1e1e;
+            }
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(36, 35, 35, 0.3);
+        }
+    }
+
+    span {
+        color: grey;
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 200px;
+        animation: text 3s ease-in-out linear;
+
+        @keyframes text {
+            50% {
+                color: red;
+            }
+        }
+    }
+}
+
 // ********** Partie localisation **********
 
 .location {
@@ -33,6 +110,10 @@ body {
         left: 0px;
         box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
     }
+    
+    i {
+        color: $grey;
+    }
 
     input {
         width: 135px;
@@ -47,10 +128,6 @@ body {
             font-weight: 600;
             font-size: 1rem;
         }
-    }
-
-    i {
-        color: $grey;
     }
 }
 
@@ -114,7 +191,6 @@ body {
         font-size: 1.5rem;
         font-weight: 700;
     }
-}
 
     .functioning-container{
         display: flex;
@@ -138,7 +214,7 @@ body {
         @include bloc-shadow;
 
 
-    &:nth-child(1):before {
+        &:nth-child(1):before {
             content: "1";
             position: absolute;
             font-size: 0.8rem;
@@ -149,9 +225,9 @@ body {
             border-radius: 25px;
             background: $btn-color2;
             color: white;
-    }
+        }
 
-    &:nth-child(2):before {
+        &:nth-child(2):before {
             content: "2";
             position: absolute;
             font-size: 0.8rem;
@@ -161,9 +237,9 @@ body {
             border-radius: 25px;
             background: $btn-color2;
             color: white;
-    }
+        }
 
-    &:nth-child(3):before {
+        &:nth-child(3):before {
             content: "3";
             position: absolute;
             font-size: 0.8rem;
@@ -173,20 +249,20 @@ body {
             border-radius: 25px;
             background: $btn-color2;
             color: white;
-    }
+        }
 
 
-    p {
+        p {
             margin: 0;
             padding-left: 35px;
             font-weight: 600;
-        }
+            }
 
-    i {
+        i   {
             padding-right: 20px;
-     }
+        }
+    }
 }
-
     
 
 // ******** Partie Réstaurant *********
@@ -244,15 +320,16 @@ body {
 
     .logo-heart {
 
-            
-        i{
-            font-size: 1.5em;
-            transition: 0.7s ease-in-out;
-        }
-            
-        i:hover{
-            font-weight: 600;
-            color: $btn-color1;
+        svg {
+            width: 25px;
+            height: 30px;
+            fill: white;
+            stroke: black;
+
+            &:hover {
+                fill: url(#heart-gradient);
+                stroke-width: 0;
+            }
         }
     }
 }

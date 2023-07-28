@@ -5,6 +5,8 @@
 body {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 a {
@@ -104,7 +106,7 @@ body {
   margin-top: 10px;
   margin-bottom: 50px;
 }
-.menu__header div {
+.menu__header .text-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -122,10 +124,20 @@ body {
   font-size: 1.7rem;
   margin-bottom: 0.5rem;
 }
-.menu__header i {
-  margin-top: 10px;
+.menu__header .logo-heart {
+  margin-top: 15px;
   margin-right: 35px;
   font-size: 1.5rem;
+}
+.menu__header .logo-heart svg {
+  width: 30px;
+  height: 30px;
+  fill: #F6F6F6;
+  stroke: black;
+}
+.menu__header .logo-heart svg:hover {
+  fill: url(#heart-gradient);
+  stroke-width: 0;
 }
 .menu .card {
   display: -webkit-box;

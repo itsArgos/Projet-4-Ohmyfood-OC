@@ -40,9 +40,8 @@ body {
     }
 
     &__header {
-        
-        
-        div{
+               
+        .text-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -54,12 +53,24 @@ body {
                 font-size: 1.7rem;
                 margin-bottom: 0.5rem;
             }
-
-            i {
-                margin-top: 10px;
+            
+            .logo-heart {
+                margin-top: 15px;
                 margin-right: 35px;
                 font-size: 1.5rem;
+                
+            svg {
+                width: 30px;
+                height: 30px;
+                fill: $main-bg-color;
+                stroke: black;
+    
+                &:hover {
+                    fill: url(#heart-gradient);
+                    stroke-width: 0;
+                }
             }
+        }
     }
 
     .card {
@@ -78,13 +89,13 @@ body {
             color: $paragraph-color;
         }
     }
+
     .card-content {
         margin-left: 13px;
     
         p {
         font-size: 0.9rem;
         margin-top: 0;
-
     }
         h3 {
         font-size: 1.1rem;
@@ -92,10 +103,9 @@ body {
     }
 }
 
-        .flex-card {
-            margin-bottom: 40px;
-        }
-
+    .flex-card {
+        margin-bottom: 40px;
+    }
 }
 
 .line-bottom{
