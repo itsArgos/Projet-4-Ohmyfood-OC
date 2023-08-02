@@ -59,34 +59,71 @@ body {
                 margin-right: 35px;
                 font-size: 1.5rem;
                 
-            svg {
-                width: 30px;
-                height: 30px;
-                fill: $main-bg-color;
-                stroke: black;
-    
-                &:hover {
-                    fill: url(#heart-gradient);
-                    stroke-width: 0;
+                svg {
+                    width: 30px;
+                    height: 30px;
+                    fill: $main-bg-color;
+                    stroke: black;
+                    
+                    &:hover {
+                        fill: url(#heart-gradient);
+                        stroke-width: 0;
+                        transition: .5s;
+                        
                 }
             }
         }
     }
 
+
+    // ********************* Card *****************
     .card {
+        --margin-card: 10px;
+        --price-width: 28px;
+        --price-margin: 15px;
+        --check-width: 100px;
         display: flex;
-        justify-content: space-between;
         border: 1px solid transparent;
         border-radius: 15px;
-        margin: 10px;
+        margin: var(--margin-card);
         background: white;
         @include bloc-shadow;
 
+        &:hover {
+            .check {
+                animation: check 1s ease-in-out;
+                animation-fill-mode: forwards;
+            }
+
+            p {
+                width: calc(100vw - (var(--margin-card) * 2 + var(--price-margin) + var(--price-width) + var(--check-width)));
+            }
+
+            @keyframes check {
+
+                0% {
+                    opacity: 0;
+                }
+    
+                100% {
+                    opacity: 1;
+                    width: var(--check-width);
+                }
+            }
+        }
+
         .price {
             margin-top: 43px;
-            margin-right: 12px;
+            margin-right: var(--price-margin);
+            width: var(--price-width);
             font-weight: 600;
             color: $paragraph-color;
+        }
+
+        .container-card {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
         }
     }
 
@@ -94,10 +131,18 @@ body {
         margin-left: 13px;
     
         p {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+        overflow: hidden;
         font-size: 0.9rem;
         margin-top: 0;
     }
         h3 {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+        overflow: hidden;
         font-size: 1.1rem;
         margin-bottom: 0.3em;
     }
@@ -106,6 +151,17 @@ body {
     .flex-card {
         margin-bottom: 40px;
     }
+
+   .check {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        background: $tertiary-color;
+        width: 0%;
+        height: 76px;
+        border-radius: 0 25px 25px 0;
+    }   
 }
 
 .line-bottom{
@@ -141,7 +197,7 @@ body {
     @include btn-shadow;
     
     &:hover {
-        filter: brightness(1.1);
+        opacity: 0.8;
         @include btn-shadow-hover
     }
 

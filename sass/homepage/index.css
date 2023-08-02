@@ -72,6 +72,9 @@ footer .footer-content i {
 footer .footer-content a {
   color: white;
 }
+footer .footer-content a:hover {
+  text-decoration: underline;
+}
 footer .footer-content li {
   margin-bottom: 10px;
 }
@@ -180,23 +183,12 @@ body {
           box-shadow: 0 0 5px rgba(36, 35, 35, 0.3);
 }
 .loader span {
-  color: grey;
+  color: rgb(147, 86, 220);
+  opacity: 0.9;
+  text-shadow: 0 5px 4px #FF79DA;
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  line-height: 200px;
-  -webkit-animation: text 3s ease-in-out linear;
-          animation: text 3s ease-in-out linear;
-}
-@-webkit-keyframes text {
-  50% {
-    color: red;
-  }
-}
-@keyframes text {
-  50% {
-    color: red;
-  }
 }
 
 .location {
@@ -295,8 +287,8 @@ body {
   color: white;
   margin-top: 10px;
   margin-bottom: 50px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
-  background: linear-gradient(#FF79DA, #9356DC);
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(rgb(147, 86, 220)));
+  background: linear-gradient(#FF79DA, rgb(147, 86, 220));
   cursor: pointer;
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
@@ -304,8 +296,7 @@ body {
           box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.45);
 }
 .search-restaurants a:hover {
-  -webkit-filter: brightness(1.15);
-          filter: brightness(1.15);
+  opacity: 0.8;
   -webkit-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.45);
           box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.45);
 }
@@ -363,6 +354,12 @@ body {
   -webkit-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
 }
+.functioning .functioning-content:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-box-shadow: 0px 0px 15px 1px rgba(147, 86, 220, 0.6);
+          box-shadow: 0px 0px 15px 1px rgba(147, 86, 220, 0.6);
+}
 .functioning .functioning-content:nth-child(1):before {
   content: "1";
   position: absolute;
@@ -374,7 +371,7 @@ body {
           align-items: center;
   padding: 4px 8px;
   border-radius: 25px;
-  background: #9356DC;
+  background: rgb(147, 86, 220);
   color: white;
 }
 .functioning .functioning-content:nth-child(2):before {
@@ -385,7 +382,7 @@ body {
   top: 130px;
   padding: 4px 8px;
   border-radius: 25px;
-  background: #9356DC;
+  background: rgb(147, 86, 220);
   color: white;
 }
 .functioning .functioning-content:nth-child(3):before {
@@ -396,7 +393,7 @@ body {
   top: 225px;
   padding: 4px 8px;
   border-radius: 25px;
-  background: #9356DC;
+  background: rgb(147, 86, 220);
   color: white;
 }
 .functioning .functioning-content p {
@@ -441,6 +438,14 @@ body {
   color: #008766;
   background: #99e2D0;
 }
+.restaurants__card:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-box-shadow: 0px 0px 15px 1px rgba(147, 86, 220, 0.6);
+          box-shadow: 0px 0px 15px 1px rgba(147, 86, 220, 0.6);
+}
 .restaurants img {
   width: 100%;
   height: 170px;
@@ -471,6 +476,8 @@ body {
   height: 30px;
   fill: white;
   stroke: black;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 .restaurants .logo-heart svg:hover {
   fill: url(#heart-gradient);

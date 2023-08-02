@@ -27,6 +27,7 @@ body {
     animation-fill-mode: forwards;
 
     @keyframes loading {
+        
         from {
             visibility: visible;
         }
@@ -73,18 +74,12 @@ body {
     }
 
     span {
-        color: grey;
+        color: $btn-color2;
+        opacity: 0.9;
+        text-shadow: 0 5px 4px $btn-color1;
         font-size: 20px;
         text-transform: uppercase;
         letter-spacing: 1px;
-        line-height: 200px;
-        animation: text 3s ease-in-out linear;
-
-        @keyframes text {
-            50% {
-                color: red;
-            }
-        }
     }
 }
 
@@ -164,11 +159,11 @@ body {
         margin-bottom: 50px;
         background: linear-gradient($btn-color1, $btn-color2);
         cursor: pointer;
-        transition: 0.4s ease; 
+        transition: .4s ease; 
         @include btn-shadow;
         
         &:hover {
-            filter: brightness(1.15);
+            opacity: 0.8;
             @include btn-shadow-hover
         }
     }
@@ -213,6 +208,10 @@ body {
         background: $main-bg-color;
         @include bloc-shadow;
 
+        &:hover {
+            transition: .5s;
+            box-shadow: 0px 0px 15px 1px rgba(147, 86, 220, 0.6);
+        }
 
         &:nth-child(1):before {
             content: "1";
@@ -296,6 +295,12 @@ body {
             color: $tertiary-color2;
             background: $tertiary-color;
         }
+
+        &:hover {
+            transition: .5s;
+            transform: scale(1.03);
+            box-shadow: 0px 0px 15px 1px rgba(147, 86, 220, 0.6);
+        }
     }
     
     img{
@@ -307,6 +312,7 @@ body {
     }
 
     &__content {
+        
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -325,6 +331,8 @@ body {
             height: 30px;
             fill: white;
             stroke: black;
+            transition: 1s;
+            
 
             &:hover {
                 fill: url(#heart-gradient);
