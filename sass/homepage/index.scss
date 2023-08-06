@@ -171,20 +171,27 @@ body {
 
 
 // ********** Partie Fonctionnement *********
-
-    .adjust-main {
-        width: 90%;
-        margin: 0 auto;
-    }
     
+.adjust-main {
+    width: 90%;
+    margin: 0 auto;
+}
+
     .functioning {
         display: flex;
-    flex-direction: column;
-    margin: 30px 0 50px 0;
+        flex-direction: column;
+        margin: 30px 0 50px 0;
+
+        @media screen and (min-width: 1000px) {
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
 
     h2 {
         font-size: 1.5rem;
         font-weight: 700;
+        margin-left: 15px;
     }
 
     .functioning-container{
@@ -192,73 +199,64 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: auto;
-        margin-left: 20px;
-        width: 93%;
+        width: 100%;
         position: relative;
+
+            @media screen and (min-width: 1000px) {
+            display: flex;
+            flex-direction: row;
+        }
     }
 
     .functioning-content {
         display: flex;
         align-items: center;
         height: 70px;
-        width: 100%;
-        margin: 10px 0 15px auto;
+        width: 77%;
+        margin: 20px 10px 20px 30px;
+        padding-left: 30px;
+        padding-right: 15px;
         border-radius: 20px;
         background: $main-bg-color;
+        cursor: pointer;
         @include bloc-shadow;
+
+        @media screen and (min-width: 603px) {
+            width: 50%;
+        }
+
+        .number-function {
+            position: relative;
+
+            p {
+                position: absolute;
+                left: -43px;
+                top: -10px;
+                padding: 5px 9px;
+                border-radius: 30px;
+                background: $btn-color2;
+                color: white;
+                font-size: 0.8em;
+            }
+        }
 
         &:hover {
             transition: .5s;
             box-shadow: 0px 0px 15px 1px rgba(147, 86, 220, 0.6);
         }
 
-        &:nth-child(1):before {
-            content: "1";
-            position: absolute;
-            font-size: 0.8rem;
-            left: -12px;
-            top: 35px;
-            align-items: center;
-            padding: 4px 8px;
-            border-radius: 25px;
-            background: $btn-color2;
-            color: white;
-        }
-
-        &:nth-child(2):before {
-            content: "2";
-            position: absolute;
-            font-size: 0.8rem;
-            left: -12px;
-            top: 130px;
-            padding: 4px 8px;
-            border-radius: 25px;
-            background: $btn-color2;
-            color: white;
-        }
-
-        &:nth-child(3):before {
-            content: "3";
-            position: absolute;
-            font-size: 0.8rem;
-            left: -12px;
-            top: 225px;
-            padding: 4px 8px;
-            border-radius: 25px;
-            background: $btn-color2;
-            color: white;
-        }
-
 
         p {
             margin: 0;
-            padding-left: 35px;
             font-weight: 600;
-            }
+        }
 
         i   {
             padding-right: 20px;
+
+            @media screen and (min-width: 1000px) {
+                font-size: 1.2rem;
+            }
         }
     }
 }
@@ -272,8 +270,21 @@ body {
     background: $main-bg-color;
     padding-bottom: 40px;
 
+        @media screen and (min-width: 768px) {
+            padding: 0;
+        }
+
+        .max-width {
+            max-width: 1100px;
+            margin: auto;
+        }
+
     h2 {
         padding-top: 30px;
+
+        @media screen and (min-width: 768px) {
+            padding: 10px;
+        }
     }
 
     &__card {
@@ -338,6 +349,17 @@ body {
                 fill: url(#heart-gradient);
                 stroke-width: 0;
             }
+        }
+    }
+
+    .grid {
+            @media screen and (min-width: 768px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;            
+            gap: 100px;
+            margin: auto;
+            margin-bottom: 30px;
+            max-width: 1074px;
         }
     }
 }
