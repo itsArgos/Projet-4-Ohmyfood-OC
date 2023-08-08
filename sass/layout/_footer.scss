@@ -1,19 +1,31 @@
 footer {
     background: $footer-bg-color;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     color: white;
+
     
     .footer-container {
         padding: 22px;
-
+        
+        @media screen and (min-width: 876px) {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-right: 25px;
+            padding-top: 40px;
+            padding-bottom: 15px;
+        }
         
         .footer-content {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             padding-top: 16px;
+
+            @media screen and (min-width: 768px) {
+                display: flex;
+                flex-direction: row;
+                gap: 30px;
+                margin-right: 70px;
+            }
 
             i {
                 margin-right: 10px;
@@ -32,9 +44,41 @@ footer {
         h3 {
             font-family: 'Shrikhand';
             font-weight: 500;
-            margin: 0;
+
+            @media screen and (max-width: 768px) {
+                margin: 0;
+            }
+        }
+
+        .first-part-content {
+            display: flex;
+            flex-direction: column;
+
+            @media screen and (min-width: 768px) {
+                display: flex;
+                flex-direction: row;
+                margin-right: 20px;
+
+                a {
+                    margin-right: 10px;
+                }
+            }
         }
         
+        .second-part-content {
+            display: flex;
+            flex-direction: column;
+
+            @media screen and (min-width: 768px) {
+                display: flex;
+                flex-direction: row;
+
+                a {
+                    margin-right: 15px;
+                }
+            }
+        }
+
     }
 
 }
