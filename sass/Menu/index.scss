@@ -130,17 +130,17 @@ body {
         --margin-card: 10px;
         --price-margin: 15px;
         --price-width: 28px;
-        --check-width: 80px;
-        display: flex;
+        --check-width: 59px;
+        display: grid;
+        grid-template-columns: 1fr 0;
         border-radius: 15px;
         margin: var(--margin-card);
         background: white;
         @include bloc-shadow;
         animation: appearance 1s;
-
-        @media screen and (min-width: 768px) {
-            --check-width: 12%;
-        }
+        transition: 0.8s;
+        width: calc(100% - (var(--margin-card) * 2));
+        
 
         @keyframes appearance {
             0% {
@@ -154,26 +154,23 @@ body {
             }
         }
 
+
+        // TRANSITION à faire ************* 
         &:hover {
-            .check {
-                animation: check 0.5s forwards;
-            }
+            
+            grid-template-columns: 1fr var(--check-width);
 
-            p {
-                width: calc(100vw - (var(--margin-card) * 2 + var(--price-margin) + var(--price-width) + var(--check-width)));
-            }
 
-            @keyframes check {
+            // @media screen and (max-width: 768px) {
+                
+            //     p, h3{
+            //         width: calc(100vw - (var(--margin-card) * 2 + var(--price-margin) + var(--price-width) + var(--check-width)));
+            //     }
+            // }
+        }
 
-                0% {
-                    opacity: 0;
-                }
-    
-                100% {
-                    opacity: 1;
-                    width: var(--check-width);
-                }
-            }
+        .check {
+            width: 100%;
         }
 
         .price {
@@ -185,8 +182,9 @@ body {
         }
 
         .container-card {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr var(--price-width);
+            gap: 10px;
             width: 100%;
         }
     }
