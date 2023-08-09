@@ -36,6 +36,10 @@ ul {
     $location-bg-color: #e1e1e1c0;
     $paragraph-color: #353535d8;
 
+    $icon-color: #7e7e7e;
+    $icon-color2: #9356dc;
+    $icon-color3: #ffffff;
+
     $footer-bg-color: #353535;
 
 
@@ -50,4 +54,8 @@ ul {
 
 @mixin bloc-shadow {
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+}
+
+@mixin purple-shadow {
+    box-shadow: 0px 0px 15px 1px rgba(147, 86, 220, 0.6);
 }

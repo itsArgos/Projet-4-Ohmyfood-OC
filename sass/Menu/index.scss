@@ -123,20 +123,24 @@ body {
     }
 
     .separation {
-        margin: 40px 0 40px 0;
+        margin-bottom: 40px;
     }
 
     .card {
         --margin-card: 10px;
-        --price-width: 28px;
         --price-margin: 15px;
-        --check-width: 90px;
+        --price-width: 28px;
+        --check-width: 80px;
         display: flex;
         border-radius: 15px;
         margin: var(--margin-card);
         background: white;
         @include bloc-shadow;
         animation: appearance 1s;
+
+        @media screen and (min-width: 768px) {
+            --check-width: 12%;
+        }
 
         @keyframes appearance {
             0% {
@@ -152,8 +156,7 @@ body {
 
         &:hover {
             .check {
-                animation: check 0.8s ease-in-out;
-                animation-fill-mode: forwards;
+                animation: check 0.5s forwards;
             }
 
             p {
@@ -205,7 +208,7 @@ body {
         white-space: nowrap;
         width: 100%;
         overflow: hidden;
-        font-size: 1.1rem;
+        font-size: 1.08rem;
         margin-bottom: 0.3em;
     }
 }
@@ -223,6 +226,10 @@ body {
         width: 0%;
         height: 77px;
         border-radius: 0 15px 15px 0;
+
+        i {
+            color: $icon-color3;
+        }
     }   
 }
 
