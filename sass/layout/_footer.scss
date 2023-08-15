@@ -4,9 +4,9 @@ footer {
 
     
     .footer-container {
-        padding: 22px;
+        padding: 25px;
         
-        @media screen and (min-width: 876px) {
+        @media screen and (min-width: $version-tablet) {
             display: flex;
             flex-direction: row-reverse;
             margin-right: 25px;
@@ -20,7 +20,7 @@ footer {
             justify-content: flex-start;
             padding-top: 16px;
 
-            @media screen and (min-width: 768px) {
+            @media screen and (min-width: $version-mobile) {
                 display: flex;
                 flex-direction: row;
                 gap: 30px;
@@ -45,7 +45,7 @@ footer {
             font-family: 'Shrikhand';
             font-weight: 500;
 
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: $version-mobile) {
                 margin: 0;
             }
         }
@@ -54,7 +54,7 @@ footer {
             display: flex;
             flex-direction: column;
 
-            @media screen and (min-width: 768px) {
+            @media screen and (min-width: $version-mobile) {
                 display: flex;
                 flex-direction: row;
                 margin-right: 20px;
@@ -69,7 +69,7 @@ footer {
             display: flex;
             flex-direction: column;
 
-            @media screen and (min-width: 768px) {
+            @media screen and (min-width: $version-mobile) {
                 display: flex;
                 flex-direction: row;
 

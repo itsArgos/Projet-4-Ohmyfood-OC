@@ -1,9 +1,9 @@
 // index.scss rassemble tous les fichiers sass 
 
 // settings.scss doit être lu en premier pour que sass connaisse les variables
-@import "../Layout/settings";
-@import "../Layout/header";
-@import "../Layout/footer";
+@import "../layout/settings";
+@import "../layout/header";
+@import "../layout/footer";
 
 // ***************** Feuille de style **************
 
@@ -108,6 +108,8 @@ body {
     
     i {
         color: $grey;
+        padding-top: 1px;
+        padding-right: 5px;
     }
 
     input {
@@ -137,17 +139,25 @@ body {
     background: $main-bg-color;
     
     h1 {
+        font-size: 1.5em;
         margin-top: 40px;
         margin-bottom: 0;
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: $version-mobile) {
             font-size: 2em;
+        }
+
+        @media screen and (min-width: $version-tablet) {
+            font-size: 2.5em;
         }
     }
     
     p {
         color: $paragraph-color;
         font-weight: 300;
+        font-size: 1.125em;
+        margin-right: 20px;
+        margin-left: 20px;
     }
     
     a {
@@ -158,11 +168,15 @@ body {
         font-weight: 500;
         color: white;
         margin-top: 10px;
-        margin-bottom: 50px;
+        margin-bottom: 60px;
         background: linear-gradient($btn-color1, $btn-color2);
         cursor: pointer;
         transition: .4s ease; 
         @include btn-shadow;
+
+        @media screen and (min-width: $version-tablet) {
+            margin-bottom: 30px;
+        }
         
         &:hover {
             opacity: 0.8;
@@ -177,17 +191,11 @@ body {
     .functioning {
         display: flex;
         flex-direction: column;
-        margin: 30px 0 50px 0;
+        margin: 30px 0 70px 0;
 
-        @media screen and (min-width: 768px) {
-            padding: 30px 0 50px 30px;
-        }
-        
-
-        @media screen and (min-width: 1000px) {
+        @media screen and (min-width: $version-mobile) {
+            padding: 30px 30px 50px 30px;
             max-width: 1070px;
-            padding-left: 30px;
-            padding-right: 30px;
             margin: auto;
         }
 
@@ -196,10 +204,11 @@ body {
         font-size: 1.5rem;
         font-weight: 700;
         margin-left: 15px;
+        margin-bottom: 25px;
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: $version-mobile) {
             margin-left: 0;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
     }
 
@@ -212,7 +221,7 @@ body {
         gap: 20px;
         position: relative;
 
-            @media screen and (min-width: 1000px) {
+            @media screen and (min-width: $version-tablet) {
             display: flex;
             flex-direction: row;
         }
@@ -231,6 +240,9 @@ body {
         cursor: pointer;
         @include bloc-shadow;
 
+        @media screen and (min-width: $version-tablet) {
+            width: 100%;
+        }
 
         .number-function {
             position: relative;
@@ -262,7 +274,7 @@ body {
             color: $icon-color;
             padding-right: 20px;
 
-            @media screen and (min-width: 1000px) {
+            @media screen and (min-width: $version-tablet) {
                 font-size: 1.2rem;
             }
         }
@@ -280,11 +292,10 @@ body {
     display: flex;
     flex-direction: column;
     background: $main-bg-color;
-    padding: 0 17px 30px 17px;
+    padding: 0 17px 40px 17px;
 
-    @media screen and (min-width: 768px) {
-        padding-left: 30px;
-        padding-right: 30px;
+    @media screen and (min-width: $version-mobile) {
+        padding: 0 30px 0 30px;
     }
 
     &__bloc {
@@ -292,13 +303,18 @@ body {
         width: 100%;
 
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: $version-mobile) {
             max-width: 1060px;
         }
     }
 
     h2 {
         padding-top: 30px;
+
+        @media screen and (min-width: $version-mobile) {
+            padding-top: 10px;
+            margin-bottom: 25px;
+        }
     }
 
     &__card {
@@ -327,12 +343,16 @@ body {
         }
     }
     
-    img{
+    img {
         width: 100%;
         height: 170px;
         object-fit: cover;
         object-position: 50% 62%;
         border-radius: 15px 15px 0 0;
+
+        @media screen and (min-width: $version-tablet) {
+            object-position: 50% 56%;
+        }
     }
 
     &__content {
@@ -340,7 +360,7 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 15px 25px 15px 10px;
+        padding: 10px 25px 15px 15px;
 
         h3, p{
             margin: 0;
@@ -391,7 +411,7 @@ body {
     }
 
     .grid {
-            @media screen and (min-width: 768px) {
+            @media screen and (min-width: $version-mobile) {
             display: grid;
             grid-template-columns: 1fr 1fr;            
             gap: 30px 100px;
