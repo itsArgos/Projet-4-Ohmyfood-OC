@@ -14,7 +14,7 @@ body {
 
 .fa-arrow-left {
     color: #454545;
-
+    
     &:hover {
         opacity: 0.5;
     }
@@ -25,7 +25,7 @@ body {
     position: absolute;
     width: 100%;
     top: 270px;
-
+    
     @media screen and (min-width: $version-mobile) {
         top: 500px;
     }
@@ -39,7 +39,7 @@ body {
     object-position: 50% 55%;
     width: 100%;
     height: 240px;
-
+    
     @media screen and (min-width: $version-mobile) {
         height: 480px;
     }
@@ -48,37 +48,37 @@ body {
 // ********* Menu ********** 
 
 .menu {
-
+    
     background: $main-bg-color;
     width: 100%;
     border-radius: 40px 40px 0 0;
     margin-top: 10px;
     padding-bottom: 1px;
-
+    
     @media screen and (min-width: $version-mobile) {
         max-width: 800px;
         margin: 0 auto;
     }
-
-
+    
+    
     @media screen and (min-width: $version-tablet) {
         max-width: 900px;
         margin: 0 auto;
     }
-
+    
     @media screen and (min-width: $version-desktop) {
         max-width: 1100px;
         margin: 0 auto;
     }
-
+    
     &__header {
-               
+        
         .text-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-left: 15px;
-
+            
             @media screen and (min-width: $version-mobile) {
                 justify-content: center;
                 margin-right: 0;
@@ -86,80 +86,103 @@ body {
                 padding-bottom: 20px;
             }
         }
-
-            h2{
-                font-family: 'Shrikhand';
-                font-weight: 500;
-                font-size: 1.7rem;
-                margin-bottom: 0.5rem;
-            }
+        
+        h2{
+            font-family: 'Shrikhand';
+            font-weight: 500;
+            font-size: 1.7rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .logo-heart {
+            margin-top: 15px;
+            margin-right: 35px;
+            font-size: 1.5rem;
             
-            .logo-heart {
-                margin-top: 15px;
-                margin-right: 35px;
-                font-size: 1.5rem;
-
-                svg {
-                    width: 30px;
-                    height: 30px;
-                    fill: $main-bg-color;
-                    stroke: black;
+            svg {
+                width: 30px;
+                height: 30px;
+                fill: $main-bg-color;
+                stroke: black;
+                
+                @media screen and (min-width: $version-mobile) {
+                    margin-left: 30px;
+                }
+                
+                &:hover {
+                    animation: heart-animation 1.5s ease forwards;
                     
-                    @media screen and (min-width: $version-mobile) {
-                        margin-left: 30px;
-                    }
                     
-                    &:hover {
-                        animation: heart-animation 1.5s ease forwards;
-                        
-                        
                     @keyframes heart-animation {
-                            
+                        
                         0% {
-                        opacity: 1;
-                    }
-
-                    10%,30% {
-                        opacity: 0.7;
-                    }
-
-                    40%,59% {
-                        opacity: 0.8;
-                    }
-
-                    60%,90% {
-                        stroke-width: 0;
-                        opacity: 0.9;
-                        fill: url(#heart-gradient);
-                    }
-                    
-                    100% {
-                        stroke-width: 0;
-                        opacity: 1;
-                        fill: url(#heart-gradient);
+                            opacity: 1;
+                        }
+                        
+                        10%,30% {
+                            opacity: 0.7;
+                        }
+                        
+                        40%,59% {
+                            opacity: 0.8;
+                        }
+                        
+                        60%,90% {
+                            stroke-width: 0;
+                            opacity: 0.9;
+                            fill: url(#heart-gradient);
+                        }
+                        
+                        100% {
+                            stroke-width: 0;
+                            opacity: 1;
+                            fill: url(#heart-gradient);
+                        }
                     }
                 }
             }
         }
     }
-}
-
-
+    
+    
     // ********************* Card *****************
     .menu-content {
         @media screen and (min-width: $version-mobile) {
             max-width: 700px;
             margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            
         }
     }
-
+    
     .separation {
-        margin-bottom: 40px;
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            
+            &:nth-of-type(1) {
+                animation-delay: 0.5s;
+            }
+            
+            &:nth-of-type(2) {
+                animation-delay: .75s;
+            }
+            
+            &:nth-of-type(3) {
+                animation-delay:  1s;
+            }
+            
+            &:nth-of-type(4) {
+                animation-delay:  1.25s;
+            }
+        }
     }
-
+    
     .card {
         --margin-card: 10px;
-        --price-margin: 15px;
         --price-width: 28px;
         --check-width: 59px;
         display: grid;
@@ -168,136 +191,126 @@ body {
         margin: var(--margin-card);
         background: white;
         @include bloc-shadow;
-        animation: appearance 1s;
-        transition: 0.8s;
-        width: calc(100% - (var(--margin-card) * 2));
+        animation-name: appearance;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        transition: 0.5s;
+        transform: scale(0);
         
-
+        
         @keyframes appearance {
             0% {
-                transform: translateY(-50%);
-                opacity: 0;
+                transform: scale(0);
             }
-
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-
-        // TRANSITION à faire ************* 
-        &:hover {
             
-            grid-template-columns: 1fr var(--check-width);
-
-
-            // @media screen and (max-width: 768px) {
-                
-            //     p, h3{
-            //         width: calc(100vw - (var(--margin-card) * 2 + var(--price-margin) + var(--price-width) + var(--check-width)));
-            //     }
-            // }
+            100% {
+                transform: scale(1);
+            }
         }
-
+        
+        &:hover {
+            grid-template-columns: 1fr var(--check-width);
+        }
+        
         .check {
             width: 100%;
         }
-
+        
         .price {
             margin-top: 43px;
-            margin-right: var(--price-margin);
             width: var(--price-width);
             font-weight: 600;
             color: $paragraph-color;
         }
-
+        
         .container-card {
             display: grid;
             grid-template-columns: 1fr var(--price-width);
             gap: 10px;
             width: 100%;
+            padding: 0 15px;
+            box-sizing: border-box;
         }
     }
-
-        .card-content {
-            margin-left: 13px;
     
-            p {
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            width: 100%;
-            overflow: hidden;
+    .card-content, p, h3 {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .card-content {
+        
+        p {
             font-size: 0.9rem;
             margin-top: 0;
         }
-
-            h3 {
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                width: 100%;
-                overflow: hidden;
-                font-size: 1.08rem;
-                margin-bottom: 0.3em;
-            }
+        
+        h3 {
+            font-size: 1.08rem;
+            margin-bottom: 0.3em;
         }
-
+    }
+    
     .flex-card {
         margin-bottom: 40px;
     }
-
-        .check {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            background: $tertiary-color;
-            width: 0%;
-            height: 77px;
-            border-radius: 0 15px 15px 0;
-
-            i {
-                color: $icon-color3;
-            }
-        }   
-
-
-        .line-bottom{
-            position: relative;
-            margin-left: 10px;
-            margin-bottom: 20px;
     
+    .check {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        background: $tr-color;
+        width: 0%;
+        height: 77px;
+        border-radius: 0 15px 15px 0;
+        
+        i {
+            color: $icon-color3;
+        }
+    }   
+    
+    
+    .line-bottom{
+        position: relative;
+        margin-left: 10px;
+        margin-bottom: 20px;
+        
         &::after {
             content: "";
             border-bottom: 3px solid;
             position: absolute;
-            color: $tertiary-color;
+            color: $tr-color;
             width: 40px;
             height: 3px;
             left: 1px;
             top: 20px;
         }
     }
-
-        .btn-order {
-            text-align: center;
-            border: unset;
-            width: 130px;
-            border-radius: 25px;
-            padding: 15px 25px;
-            font-size: 1rem;
-            font-weight: 500;
-            margin: 40px auto;
-            background: linear-gradient($btn-color1, $btn-color2);
-            cursor: pointer;
-            transition: 0.4s ease;
-            @include btn-shadow;
     
+    .btn-order {
+        display: block;
+        text-align: center;
+        border: unset;
+        width: 186px;
+        border-radius: 25px;
+        padding: 15px 25px;
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 40px auto;
+        background: linear-gradient($btn-color1, $btn-color2);
+        cursor: pointer;
+        transition: 0.4s ease;
+        @include btn-shadow;
+        align-self: center;
+        
         &:hover {
             opacity: 0.8;
             @include btn-shadow-hover
         }
-
+        
         a {
             color: white;
         }

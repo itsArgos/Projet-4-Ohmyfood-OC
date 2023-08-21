@@ -284,7 +284,6 @@ body {
         }
     }
 }
-    
 
 // ******** Partie Réstaurant *********
 
@@ -323,6 +322,7 @@ body {
         background: white;
         margin-bottom: 20px;
         position: relative;
+        transition: .5s ease;
 
         .new-after::after {
             content: "Nouveau";
@@ -333,12 +333,11 @@ body {
             top: 15px;
             padding: 6px 12px;
             border-radius: 2px;
-            color: $tertiary-color2;
-            background: $tertiary-color;
+            color: $ter-color2;
+            background: $tr-color;
         }
 
         &:hover {
-            transition: .5s;
             transform: scale(1.03);
         }
     }
