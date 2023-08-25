@@ -386,7 +386,7 @@ body {
             stroke: black;            
             
             &:hover {
-                animation: heart-animation 1s ease-in-out forwards;
+                animation: heart-animation 1.5s ease-in-out forwards;
                 
                 
                 @keyframes heart-animation {

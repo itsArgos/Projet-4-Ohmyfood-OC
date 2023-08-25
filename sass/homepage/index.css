@@ -632,8 +632,8 @@ body {
   stroke: black;
 }
 .restaurants .logo-heart svg:hover {
-  -webkit-animation: heart-animation 1s ease-in-out forwards;
-          animation: heart-animation 1s ease-in-out forwards;
+  -webkit-animation: heart-animation 1.5s ease-in-out forwards;
+          animation: heart-animation 1.5s ease-in-out forwards;
 }
 @-webkit-keyframes heart-animation {
   0% {
