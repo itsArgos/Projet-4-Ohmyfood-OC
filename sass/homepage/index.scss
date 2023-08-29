@@ -222,6 +222,7 @@ body {
         gap: 20px;
         position: relative;
         
+        
         @media screen and (min-width: $version-tablet) {
             display: flex;
             flex-direction: row;
@@ -238,6 +239,7 @@ body {
         padding-right: 15px;
         border-radius: 20px;
         background: $main-bg-color;
+        transition: .5s;
         cursor: pointer;
         @include bloc-shadow;
         
@@ -261,7 +263,6 @@ body {
         }
         
         &:hover {
-            transition: .5s;
             @include purple-shadow
         }
         
